@@ -18,7 +18,10 @@ const RegisterUser = () => {
 
   const register = async (e) => {
     e.preventDefault();
-    await Axios.post("http://127.0.0.1:3333/register", user);
+    await Axios.post(
+      "https://managementsystemadr.herokuapp.com/register",
+      user
+    );
     history.push("/");
   };
 

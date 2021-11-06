@@ -49,8 +49,6 @@ const Navbar = () => {
             {localStorage.getItem("isUser") === "true" ? (
               <li className="nav-item">
                 <div className="nav-link" onClick={logout}>
-                  {" "}
-                  {/*() => localStorage.clear()}>*/}
                   Logout
                 </div>
               </li>

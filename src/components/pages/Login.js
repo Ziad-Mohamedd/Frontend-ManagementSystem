@@ -16,7 +16,10 @@ const Login = (props) => {
     console.log("submitted");
     if (e) e.preventDefault();
     axios
-      .post("http://localhost:3333/login", { email: email, password: password })
+      .post("https://managementsystemadr.herokuapp.com/login", {
+        email: email,
+        password: password,
+      })
       .then((res) => {
         localStorage.setItem("isUser", true);
         props.history.push("/");
@@ -29,7 +32,7 @@ const Login = (props) => {
     console.log(response);
     setUser({ email: response.profileObj.email, password: "1234567" });
     await axios
-      .post("http://localhost:3333/login", user)
+      .post("https://managementsystemadr.herokuapp.com/login", user)
       .then((res) => {
         localStorage.setItem("isUser", true);
         props.history.push("/");
@@ -39,7 +42,7 @@ const Login = (props) => {
       .catch((err) => console.log(err));
     if (localStorage.getItem("isUser") !== "true") {
       await axios
-        .post("http://127.0.0.1:3333/register", user)
+        .post("https://managementsystemadr.herokuapp.com/register", user)
         .then((res) => {
           localStorage.setItem("isUser", true);
           props.history.push("/");
