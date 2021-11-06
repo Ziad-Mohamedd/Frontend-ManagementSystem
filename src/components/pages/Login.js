@@ -29,7 +29,7 @@ const Login = (props) => {
   };
 
   const responseGoogle = async (response) => {
-    console.log(response);
+    // console.log(response);
     setUser({ email: response.profileObj.email, password: "1234567" });
     await axios
       .post("https://managementsystemadr.herokuapp.com/login", user)
